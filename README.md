@@ -2,7 +2,7 @@
 
 A Laravel 12 application for web-based user management and a secured REST API.
 
-# requirement
+# Requirement
 
 - Minimun PHP 8.2
 
