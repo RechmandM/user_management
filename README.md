@@ -91,3 +91,25 @@ Protected (`Authorization: Bearer <token>`):
 ```bash
 php artisan serve
 ```
+
+## Live Demo
+
+Web Application:
+https://user-management.rechmand.id
+
+## Deployment
+
+The application is deployed on a Linux VPS and served through Nginx.
+
+Deployment flow:
+
+```text
+GitHub Repository
+       ↓
+GitHub Actions
+       ↓
+Linux VPS
+       ↓
+Nginx
+       ↓
+Live Application
