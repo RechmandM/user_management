@@ -6,11 +6,12 @@
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h3>Login</h3>
+<body class="bg-light">
+<div class="d-flex vh-100 align-items-center justify-content-center">
+    <div class="card shadow-sm" style="width:100%; max-width:420px; border-radius:.75rem;">
+        <div class="card-body p-4">
+            <h3 class="card-title text-center mb-4">User Mangement</h3>
+            <h5 class="card-title text-center mb-3 text-muted">Silahkan Masuk</h5>
 
             @if(session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
@@ -38,11 +39,18 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-primary">Login</button>
-                <a href="{{ route('register.form') }}" class="btn btn-link">Register</a>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <a href="{{ route('register.form') }}" class="btn btn-outline-secondary">Register</a>
+                </div>
             </form>
         </div>
     </div>
 </div>
+
+<style>
+    .card { background: #fff; }
+    .form-control:focus { box-shadow: none; border-color: #86b7fe; }
+</style>
 </body>
 </html>
