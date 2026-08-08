@@ -27,6 +27,7 @@ class RegisterRequest extends FormRequest
             'name' => 'Nama harus diisi.',
             'email.unique' => 'Email sudah terdaftar.',
             'name.regex' => 'Name harus dimulai dengan huruf dan hanya boleh berisi huruf serta spasi.',
+            'password' => 'Nama harus diisi.',
             'password.regex' => 'Password harus berisi huruf kecil, huruf kapital, angka, dan karakter spesial.',
             'password.min' => 'Password minimal harus 6 karakter.'
         ];
