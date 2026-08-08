@@ -6,7 +6,7 @@ on:
       - main # Jalankan otomatis jika push ke branch main
 
 jobs:
-  # deploy
+  # deploy fixed
   deploy:
     runs-on: ubuntu-latest
 
