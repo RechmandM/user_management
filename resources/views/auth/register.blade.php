@@ -10,7 +10,7 @@
 <div class="d-flex vh-100 align-items-center justify-content-center">
     <div class="card shadow-sm" style="width:100%; max-width:420px; border-radius:.75rem;">
         <div class="card-body p-4">
-            <h3 class="card-title text-center mb-4">User Mangement</h3>
+            <h3 class="card-title text-center mb-4">User Management</h3>
             <h5 class="card-title text-center mb-3 text-muted">Daftar</h5>
 
             <form action="{{ route('register') }}" method="post">
