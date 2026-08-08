@@ -20,11 +20,12 @@ class UserController extends Controller
     /**
      * Tampilkan daftar user.
      */
-    public function index(): View
+    public function index(Request $request): View
     {
         $users = User::orderByDesc('created_at')->get();
+        $user_email = $request->session()->get('user_email');
 
-        return view('users.index', compact('users'));
+        return view('users.index', compact('users', 'user_email'));
     }
 
     /**

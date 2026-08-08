@@ -43,7 +43,7 @@
                     <td>{{ $user->created_at->format('Y-m-d H:i') }}</td>
                     <td>
                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                        <form action="{{ route('users.destroy', $user->id) }}" method="post" class="d-inline">
+                        <form action="{{ route('users.destroy', $user->id) }}" method="post" class="d-inline {{ $user->email == $user_email ? 'd-none' : '' }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Hapus user ini?')">Hapus</button>

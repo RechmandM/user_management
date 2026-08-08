@@ -41,7 +41,11 @@
 
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-primary">Login</button>
-                    <a href="{{ route('register.form') }}" class="btn btn-outline-secondary">Register</a>
+                    <a href="{{ route('register.form') }}" class="btn btn-outline-secondary">Daftar</a>
+                </div>
+
+                <div class="text-center mt-3">
+                    <a href="https://rechmand.id">www.rechmand.id</a>
                 </div>
             </form>
         </div>

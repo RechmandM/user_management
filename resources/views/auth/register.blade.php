@@ -44,6 +44,10 @@
                     <button type="submit" class="btn btn-primary">Daftar</button>
                     <a href="{{ route('login.form') }}" class="btn btn-outline-secondary">Masuk</a>
                 </div>
+
+                <div class="text-center mt-3">
+                    <a href="https://rechmand.id">www.rechmand.id</a>
+                </div>
             </form>
         </div>
     </div>
