@@ -6,29 +6,25 @@ on:
       - main # Jalankan otomatis jika push ke branch main
 
 jobs:
-
   # deploy
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4.1.2
+      - name: Jalankan Perintah di VPS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: 62631
+          script: |
+            cd /www/wwwroot/user-management.rechmand.id
 
-    - name: Jalankan Perintah di VPS via SSH
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.VPS_HOST }}
-        username: ${{ secrets.VPS_USER }}
-        key: ${{ secrets.VPS_SSH_KEY }}
-        port: 62631
-        script: |
-          cd /www/wwwroot/user-management.rechmand.id
-          
-          # 1. Tarik kode terbaru dari GitHub
-          git pull origin main
-          
-          # 2. Bersihkan dan optimalkan cache Laravel
-          php artisan config:cache
-          php artisan route:cache
-          php artisan view:cache
+            # 1. Tarik kode terbaru dari GitHub
+            git pull origin main
+
+            # 2. Bersihkan dan optimalkan cache Laravel
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
