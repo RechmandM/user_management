@@ -5,7 +5,9 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect()->route('login.form');
+    return request()->session()->has('user_email')
+        ? redirect()->route('users.index')
+        : redirect()->route('login.form');
 });
 
 // register

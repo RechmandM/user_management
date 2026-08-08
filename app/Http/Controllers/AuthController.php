@@ -17,8 +17,12 @@ use Illuminate\View\View;
 class AuthController extends Controller
 {
     // Tampilkan form registrasi.
-    public function showRegister(): View
+    public function showRegister(): RedirectResponse|View
     {
+        if (session()->has('user_email')) {
+            return redirect()->route('users.index');
+        }
+
         return view('auth.register');
     }
 
@@ -39,8 +43,12 @@ class AuthController extends Controller
     /**
      * Tampilkan form login.
      */
-    public function showLogin(): View
+    public function showLogin(): RedirectResponse|View
     {
+        if (session()->has('user_email')) {
+            return redirect()->route('users.index');
+        }
+
         return view('auth.login');
     }
 
